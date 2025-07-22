@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aahil's Carousel</title>
+  <style>
+body {
+  margin: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.carousel {
+  position: relative;
+  width: 1366px;
+  height: 800px;
+  overflow: hidden;
+}
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.showing {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+  <div class="carousel">
+    <img src="https://www.dropbox.com/scl/fi/j74rooon74gpr8o208k7h/1_20250722_061945_0000.png?raw=1" class="slide showing"><img src="https://www.dropbox.com/scl/fi/hph1lsp9f0xoyc4oqghph/2_20250722_061945_0001.png?raw=1" class="slide"><img src="https://www.dropbox.com/scl/fi/1m8kyhpqyihj1m7ihcqox/3_20250722_061945_0002.png?raw=1" class="slide"><img src="https://www.dropbox.com/scl/fi/3hl3lyaizpgfcxi88mcou/4_20250722_061945_0003.png?raw=1" class="slide"><img src="https://www.dropbox.com/scl/fi/0zfyy9avkw5m5nzioyfdo/6_20250722_061945_0005.png?raw=1" class="slide"><img src="https://www.dropbox.com/scl/fi/k6rp8u35bpe64wcczhd3v/10_20250722_061946_0009.png?raw=1" class="slide"><img src="https://www.dropbox.com/scl/fi/5kkvby0myk38zm7le4w8r/11.png?raw=1" class="slide"><img src="https://www.dropbox.com/scl/fi/2pq6xnwmu50ogwqh2n7m0/12.png?raw=1" class="slide"><img src="https://www.dropbox.com/scl/fi/v3sg9wog9b92flam7qf3a/13.png?raw=1" class="slide"><img src="https://www.dropbox.com/scl/fi/ppjgrx0sfr7q1rmol9otb/14.png?raw=1" class="slide"><img src="https://www.dropbox.com/scl/fi/kof2k3bmw2vm9vof4sy3j/15.png?raw=1" class="slide"><img src="https://www.dropbox.com/scl/fi/x2p3b1e2qf8v3rliorwcd/16.png?raw=1" class="slide"><img src="https://www.dropbox.com/scl/fi/tc46b9nyql1d4n7pwz4f8/17.png?raw=1" class="slide"><img src="https://www.dropbox.com/scl/fi/l17rq3unbk9ml8wqgvxil/18.png?raw=1" class="slide">
+  </div>
+  <script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+setInterval(() => {
+  slides[currentSlide].classList.remove('showing');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('showing');
+}, 4000);
+</script>
+</body>
+</html>
